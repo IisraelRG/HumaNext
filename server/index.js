@@ -37,6 +37,7 @@ app.post("/create", (req, res) => {
       (err, result) => {
         if (err) {
           console.log(err);
+          res.status(500).send("Error al registrar empleado");
         } else {
           res.send("Empleado registrado con exito!");
         }
@@ -44,7 +45,7 @@ app.post("/create", (req, res) => {
     );
   } catch (err) {
     console.error(err);
-    res.status(500).send("error al registrar empleado");
+    res.status(500).send("Error al registrar empleado");
   }
 });
 
@@ -60,12 +61,11 @@ app.get("/empleados", (req, res) => {
     });
   } catch (err) {
     console.error(err);
-    res.status(500).send("error al mostrar el empleado");
+    res.status(500).send("Error al mostrar los empleados");
   }
 });
 
-app.post("/update", (req, res) => {
-  const id_datos_personales = req.id_datos_personales;
+app.put("/update", (req, res) => {
   const nombre = req.body.nombre;
   const fecha_de_nacimiento = req.body.fecha_de_nacimiento;
   const rfc = req.body.rfc;
@@ -73,12 +73,12 @@ app.post("/update", (req, res) => {
   const sexo = req.body.sexo;
   const estado_civil = req.body.estado_civil;
   const nacionalidad = req.body.nacionalidad;
+  const id_datos_personales = req.body.id_datos_personales;
 
   try {
     db.query(
-      "UPDATE `datos_personales` SET `Nombre` = ?,`Fecha_de_nacimiento` = ?,`RFC` = ?,`CURP` = ?,`Sexo` = ?,`Estado_civil` = ?,`Nacionalidad` = ? WHERE id_datos_personales = ?",
+      "UPDATE `datos_personales` SET Nombre = ?, Fecha_de_nacimiento = ?,RFC = ?,CURP = ?,Sexo = ?,Estado_civil = ?,Nacionalidad = ? WHERE id_datos_personales = ?",
       [
-        id_datos_personales,
         nombre,
         fecha_de_nacimiento,
         rfc,
@@ -86,21 +86,45 @@ app.post("/update", (req, res) => {
         sexo,
         estado_civil,
         nacionalidad,
+        id_datos_personales,
       ],
       (err, result) => {
         if (err) {
           console.log(err);
+          res.status(500).send("Error al actualizar empleado");
         } else {
-          res.send("Empleado registrado con exito!");
+          res.send("Empleado actualizado con éxito!");
         }
       }
     );
   } catch (err) {
     console.error(err);
-    res.status(500).send("error al registrar empleado");
+    res.status(500).send("Error al actualizar empleado");
+  }
+});
+
+app.delete("/delete/:id_datos_personales", (req, res) => {
+  const id_datos_personales = req.params.id_datos_personales;
+
+  try {
+    db.query(
+      "DELETE FROM `datos_personales` WHERE id_datos_personales = ?",
+      [id_datos_personales],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send("Error al actualizar empleado");
+        } else {
+          res.send("Empleado Eliminado con éxito!");
+        }
+      }
+    );
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error al actualizar empleado");
   }
 });
 
 app.listen(3001, () => {
-  console.log("Corriendo en el puerto 3000");
+  console.log("Corriendo en el puerto 3001");
 });

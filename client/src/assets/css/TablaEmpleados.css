@@ -1,0 +1,79 @@
+.contentMain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contentSubtitle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.btnAdd {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 100px;
+}
+
+.contentFormularioEmpleado {
+  position: relative;
+  width: 50%;
+  background: #ffffff;
+  padding: 25px;
+}
+.btnsEditDelete {
+  display: flex;
+  gap: 20px;
+}
+.btnEdit,
+.btnDelete {
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #860aa5;
+  padding: 7px 20px;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+}
+.filtroEditDelete {
+  position: fixed;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff96;
+}
+.ventanaEditDelete {
+  position: relative;
+  width: 30%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  background: #ffffff;
+}
+.btnClose {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background: #ffffff;
+}

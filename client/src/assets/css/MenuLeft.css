@@ -1,0 +1,29 @@
+.menuLeft {
+  width: 60px;
+  height: 84vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 100px;
+  background: #fff;
+  padding: 30px 0px;
+}
+.menuLeft img {
+  width: 30px;
+}
+.btnIconLeft {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  transition: background 1s;
+}
+.btnIconLeft:hover {
+  background: #ff94df77;
+}
+.btnIconLeft img {
+  width: 25px;
+}

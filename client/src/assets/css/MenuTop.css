@@ -1,0 +1,34 @@
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 0px 50px;
+}
+.contentSearch {
+  position: relative;
+}
+.inputSearch {
+  width: 400px;
+  height: 40px;
+  padding-left: 15px;
+  border: none;
+  border-radius: 100px;
+  background: #860aa53f;
+  outline: none;
+}
+.btnSearch {
+  top: 5px;
+  right: 10px;
+  position: absolute;
+}
+.iconTop {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.iconImage {
+  width: 28px;
+}

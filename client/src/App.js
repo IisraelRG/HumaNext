@@ -1,8 +1,17 @@
 import "./App.css";
-import CategoriasNominas from "./pages/CategoriasNominas";
+import MenuTop from "./components/MenuTop";
+import Main from "./pages/Main";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
-  return <CategoriasNominas />;
+  return (
+    <>
+      <BrowserRouter>
+        <MenuTop />
+        <Main />
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default App;
